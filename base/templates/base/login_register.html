@@ -11,14 +11,14 @@
               <h3>Login</h3>
             </div>
           </div>
-          <div class="layout__body">
-            <h2 class="auth__tagline">Find your study partner</h2>
+          <div class="layout__body" >
+            <h2 class="auth__tagline">Find your swarm</h2>
 
             <form class="form" action="" method="post">
               {% csrf_token %}
               <div class="form__group form__group">
-                <label for="room_name">Username</label>
-                <input id="username" name="username" type="text" placeholder="e.g. dennis_ivy" />
+                <label for="room_name">Email</label>
+                <input id="username" name="email" type="text" placeholder="e.g. gburdell@gatech.edu" />
               </div>
               <div class="form__group">
                 <label for="password">Password</label>
