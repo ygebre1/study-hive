@@ -9,7 +9,7 @@
             <div class="room__topLeft">
               <a href="{% url 'home' %}">
                 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
-                  <title>arrow-left</title>
+                  <title>Back to Home Page</title>
                   <path
                     d="M13.723 2.286l-13.723 13.714 13.719 13.714 1.616-1.611-10.96-10.96h27.625v-2.286h-27.625l10.965-10.965-1.616-1.607z"
                   ></path>
@@ -27,7 +27,7 @@
                   width="32"
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <title>edit</title>
+                  <title>Edit Room</title>
                   <g>
                     <path d="m23.5 22h-15c-.276 0-.5-.224-.5-.5s.224-.5.5-.5h15c.276 0 .5.224.5.5s-.224.5-.5.5z" />
                   </g>
@@ -47,7 +47,7 @@
               </a>
               <a href="{% url 'delete-room' room.id %}">
                 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
-                  <title>remove</title>
+                  <title>Remove Room</title>
                   <path
                     d="M27.314 6.019l-1.333-1.333-9.98 9.981-9.981-9.981-1.333 1.333 9.981 9.981-9.981 9.98 1.333 1.333 9.981-9.98 9.98 9.98 1.333-1.333-9.98-9.98 9.98-9.981z"
                   ></path>
@@ -96,7 +96,7 @@
                     <a href="{% url 'delete-message' message.id %}">
                     <div class="thread__delete">
                       <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
-                        <title>remove</title>
+                        <title>Remove Message</title>
                         <path
                           d="M27.314 6.019l-1.333-1.333-9.98 9.981-9.981-9.981-1.333 1.333 9.981 9.981-9.981 9.98 1.333 1.333 9.981-9.98 9.98 9.98 1.333-1.333-9.98-9.98 9.98-9.981z"
                         ></path>
@@ -114,9 +114,13 @@
             </div>
           </div>
           <div class="room__message">
-            <form action="" method="post">
+            <form action="" method="post" style="display: flex; align-items: center;">
               {% csrf_token %}
               <input name="body" placeholder="Write your message here..." />
+              <button class="btn btn--main" type="submit" 
+                      style="padding: 10px 15px; cursor: pointer;">
+                Send
+              </button>
             </form>
           </div>
         </div>

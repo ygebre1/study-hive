@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
@@ -138,27 +138,34 @@ def updateRoom(request, pk):
 
 @login_required(login_url='login')
 def deleteRoom(request, pk):
-    room = Room.objects.get(id=pk)
+    room = get_object_or_404(Room, id=pk)
 
     if request.user != room.host:
         return HttpResponse("You are not allowed here!!")
-    
+
     if request.method == 'POST':
         room.delete()
-        return redirect('home')
-    return render(request, 'base/delete.html', {'obj': room})
+        return redirect('home')  # Redirect to the home page
+
+    # Render the delete confirmation page with a flag for room deletion
+    return render(request, 'base/delete.html', {'obj': room, 'is_message': False})
+
 
 @login_required(login_url='login')
 def deleteMessage(request, pk):
-    message = Message.objects.get(id=pk)
+    message = get_object_or_404(Message, id=pk)
+    room = message.room  # Assuming Message has a ForeignKey to Room
 
     if request.user != message.user:
         return HttpResponse("You are not allowed here!!")
-    
+
     if request.method == 'POST':
         message.delete()
-        return redirect('home')
-    return render(request, 'base/delete.html', {'obj': message})
+        return redirect('room', pk=room.id)  # Redirect to the chat room
+
+    # Render the delete confirmation page with a flag for message deletion
+    return render(request, 'base/delete.html', {'obj': message, 'room_id': room.id, 'is_message': True})
+
 
 @login_required(login_url='login')
 def updateUser(request):
