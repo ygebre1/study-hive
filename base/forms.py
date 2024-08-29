@@ -6,6 +6,10 @@ class MyUserCreationForm(UserCreationForm):
     class Meta:
         model = User
         fields = ['name', 'username', 'email', 'password1', 'password2']
+    def __init__(self, *args, **kwargs):
+        super(MyUserCreationForm, self).__init__(*args, **kwargs)
+        if 'usable_password' in self.fields:
+            del self.fields['usable_password']
 
 class RoomForm(ModelForm):
     class Meta:
