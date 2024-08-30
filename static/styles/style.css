@@ -453,7 +453,7 @@ a {
   }
 
   .layout__boxHeader {
-    padding: 1rem; /* Adjust padding for mobile */
+    padding: 1rem; 
   }
 }
 
