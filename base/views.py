@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
-from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth import authenticate, login, logout, update_session_auth_hash
 
 from .models import Room, Topic, Message, User
 from .forms import RoomForm, UserForm, MyUserCreationForm
@@ -176,7 +176,10 @@ def updateUser(request):
         form = UserForm(request.POST, request.FILES, instance=user)
         if form.is_valid():
             form.save()
+            # Update the session with the new user data
+            update_session_auth_hash(request, user)
             return redirect('user-profile', pk=user.id)
+    
     return render(request, 'base/update-user.html', {'form': form})
 
 def topicsPage(request):
