@@ -28,7 +28,7 @@ SECRET_KEY = os.getenv('DJANGO_SECRET_KEY', 'your-new-secret-key')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['18.189.6.41','127.0.0.1']
+ALLOWED_HOSTS = ['3.133.231.99','localhost','study-hive.xyz']
 
 
 # Application definition
