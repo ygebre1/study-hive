@@ -22,5 +22,5 @@ Study Hive is more than just a discussion platform—it's a community where stud
 
 ## Get Started
 
-Ready to join the hive? Sign up today and start participating in meaningful discussions that will enhance your learning journey!
+Ready to join the hive? [Visit Study Hive](http://www.study-hive.xyz) today to sign up and start participating in meaningful discussions that will enhance your learning journey!
 
