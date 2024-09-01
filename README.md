@@ -1,5 +1,7 @@
 # Study Hive 🐝
 
+[Visit Study Hive](http://www.study-hive.xyz)
+
 Welcome to **Study Hive**—an online platform designed to foster collaboration and learning among students. Inspired by Discord, Study Hive provides a space for students to connect, discuss, and share knowledge on various topics. Whether you're tackling a new programming language, exploring a complex feature, or diving deep into advanced concepts, Study Hive has the tools to help you succeed.
 
 ## Key Features
@@ -22,5 +24,4 @@ Study Hive is more than just a discussion platform—it's a community where stud
 
 ## Get Started
 
-Ready to join the hive? [Visit Study Hive](http://www.study-hive.xyz) today to sign up and start participating in meaningful discussions that will enhance your learning journey!
-
+Ready to join the hive? Sign up today and start participating in meaningful discussions that will enhance your learning journey!
