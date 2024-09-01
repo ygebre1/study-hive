@@ -176,10 +176,12 @@ def updateUser(request):
         form = UserForm(request.POST, request.FILES, instance=user)
         if form.is_valid():
             form.save()
-            # Update the session with the new user data
             update_session_auth_hash(request, user)
+            messages.success(request, 'Your profile was updated successfully.')
             return redirect('user-profile', pk=user.id)
-    
+        else:
+            messages.error(request, 'An error occurred during profile update.')
+
     return render(request, 'base/update-user.html', {'form': form})
 
 def topicsPage(request):
